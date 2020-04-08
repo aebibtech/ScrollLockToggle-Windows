@@ -1,6 +1,6 @@
 #include <windows.h>
 
-   void SetNumLock( BOOL bState )
+   void SetScrollLock( BOOL bState )
    {
       BYTE keyState[256];
 
@@ -36,6 +36,6 @@
 
    int main()
    {
-      SetNumLock(TRUE);
+      SetScrollLock(TRUE);
       return 0;
    }
