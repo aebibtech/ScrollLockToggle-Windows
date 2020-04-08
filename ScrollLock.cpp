@@ -6,7 +6,7 @@
 
       GetKeyboardState((LPBYTE)&keyState);
       if( (bState && !(keyState[VK_SCROLL] & 1)) ||
-          (!bState && (keyState[VK_SCROLL] & 1)) )
+          (!bState && (keyState[VK_SCROLL] & 1)) ) //Check if the scroll lock is off. Turn on scroll lock.
       {
       // Simulate a key press
          keybd_event( VK_SCROLL,
@@ -19,7 +19,7 @@
                       0x45,
                       KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP,
                       0);
-      } else {
+      } else { // Scroll lock is on, turn it off.
       	 // Simulate a key press
          keybd_event( VK_SCROLL,
                       0x45,
